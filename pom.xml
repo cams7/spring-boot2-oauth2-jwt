@@ -30,10 +30,10 @@
 
 	<developers>
 		<developer>
-			<id>marcosbarbero</id>
-			<email>marcos.hgb@gmail.com</email>
-			<name>Marcos Barbero</name>
-			<timezone>Europe/Amsterdam</timezone>
+			<id>cams7</id>
+			<email>ceanma83@gmail.com</email>
+			<name>César Magalhães</name>
+			<timezone>Brazil/Belo Horizonte</timezone>
 			<roles>
 				<role>Project Lead</role>
 			</roles>
@@ -41,11 +41,11 @@
 	</developers>
 
 	<scm>
-		<connection>scm:git:https://github.com/marcosbarbero/spring-boot2-oauth2-jwt.git</connection>
+		<connection>scm:git:https://github.com/cams7/spring-boot2-oauth2-jwt.git</connection>
 		<developerConnection>
-			scm:git:git@github.com:marcosbarbero/spring-boot2-oauth2-jwt.git
+			scm:git:git@github.com/cams7/spring-boot2-oauth2-jwt.git
 		</developerConnection>
-		<url>https://github.com/marcosbarbero/spring-boot2-oauth2-jwt</url>
+		<url>https://github.com/cams7/spring-boot2-oauth2-jwt.git</url>
 		<tag>HEAD</tag>
 	</scm>
 
