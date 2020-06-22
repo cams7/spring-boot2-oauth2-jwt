@@ -12,6 +12,7 @@ import org.springframework.security.core.userdetails.UserDetailsService;
 import org.springframework.security.core.userdetails.jdbc.JdbcDaoImpl;
 import org.springframework.security.crypto.password.PasswordEncoder;
 
+import javax.servlet.http.HttpServletResponse;
 import javax.sql.DataSource;
 
 @EnableWebSecurity
@@ -55,28 +56,19 @@ public class WebSecurityConfiguration extends WebSecurityConfigurerAdapter {
         }
         return userDetailsService;
     }
-    
-//    @Override
-//	public void configure(HttpSecurity http) throws Exception {
-//		http.csrf().disable().exceptionHandling()
-//				.authenticationEntryPoint(
-//						(request, response, authException) -> response.sendError(HttpServletResponse.SC_UNAUTHORIZED))
-//				.and().authorizeRequests().antMatchers("/**").authenticated().and().httpBasic();
-//	}
-    
+        
     @Override
     protected void configure(HttpSecurity http) throws Exception {
-      http.authorizeRequests()
-        .anyRequest().authenticated()
+      http
+      	.csrf().disable()
+      	.authorizeRequests()        
         .antMatchers(HttpMethod.OPTIONS, "/**").permitAll()
+        .antMatchers("/login*").permitAll()
+        .anyRequest().authenticated()
         .and()
         .httpBasic()
         .and()
-        .antMatcher("/**")
-        .sessionManagement()
-          .sessionCreationPolicy(SessionCreationPolicy.STATELESS)
-        .and()
-        .csrf().disable();
+        .antMatcher("/**").sessionManagement().sessionCreationPolicy(SessionCreationPolicy.STATELESS);
     }
 
 }
